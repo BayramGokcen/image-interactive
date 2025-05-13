@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Interactive avec Zones Colorées</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #container {
+      position: relative;
+      display: inline-block;
+    }
+
+    #mainImage {
+      display: block;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .zone {
+      fill: transparent;
+      cursor: pointer;
+      transition: fill 0.3s ease, fill-opacity 0.3s ease;
+    }
+
+    .zone:hover.performance { fill: #ffcccc; fill-opacity: 0.6; }   /* Rose clair */
+    .zone:hover.sourcing    { fill: #cce5ff; fill-opacity: 0.6; }   /* Bleu clair */
+    .zone:hover.strategy    { fill: #d5f5d5; fill-opacity: 0.6; }   /* Vert clair */
+    .zone:hover.supplier    { fill: #ffe5b4; fill-opacity: 0.6; }   /* Orange clair */
+
+    #hoverInfo {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Schéma interactif avec zones colorées</h2>
+
+  <div id="container">
+    <img id="mainImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/SiteAssets/SitePages/Home/3118031759-rosasse_EN.png?csf=1&amp;web=1&amp;e=cQaUwU" width="837" alt="Schema Supplier">
+
+    <svg width="837" height="837" viewBox="0 0 837 837">
+      <g transform="scale(1.60) translate(0,0)">
+        <polygon class="zone performance" points="170,286,180,302,193,310,210,320,229,327,256,333,276,330,301,324,320,317,336,307,345,294,352,284,445,338,432,361,416,377,401,395,375,412,349,429,310,440,273,446,234,443,187,435,156,421,124,402,102,381,87,360,72,340" data-label="Performance Management" />
+        <polygon class="zone sourcing" points="353,283,447,338,464,295,471,268,474,228,469,185,458,150,440,117,418,86,396,62,360,40,321,24,279,15,257,12,259,125,283,128,308,142,338,163,356,192,364,222,364,250" data-label="Sourcing & Contract Management" />
+        <polygon class="zone strategy" points="259,129,257,13,196,23,150,44,112,73,76,122,53,165,45,203,44,252,49,283,58,310,72,341,169,286,158,260,157,221,162,194,178,167,194,148,216,135,237,129" data-label="Strategy" />
+        <polygon class="zone supplier" points="351,281,358,262,364,227,357,197,345,168,309,140,277,127,254,127,225,133,204,143,187,160,173,174,161,199,158,226,158,253,166,273,181,296,205,313,225,325,254,332,283,328,313,319,333,306" data-label="Supplier Management" />
+      </g>
+    </svg>
+  </div>
+
+  <div id="hoverInfo">Survolez une zone pour voir l'information</div>
+
+  <script>
+    const zones = document.querySelectorAll('.zone');
+    const hoverInfo = document.getElementById('hoverInfo');
+
+    zones.forEach(zone => {
+      zone.addEventListener('mouseenter', () => {
+        hoverInfo.textContent = zone.dataset.label;
+      });
+      zone.addEventListener('mouseleave', () => {
+        hoverInfo.textContent = "Survolez une zone pour voir l'information";
+      });
+    });
+  </script>
+</body>
+</html>
