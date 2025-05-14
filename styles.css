@@ -39,10 +39,10 @@ svg {
   transition: fill 0.3s ease, fill-opacity 0.3s ease;
 }
 
-.zone:hover.performance { fill: #ffcccc; fill-opacity: 0.2; }
-.zone:hover.sourcing    { fill: #cce5ff; fill-opacity: 0.2; }
-.zone:hover.strategy    { fill: #d5f5d5; fill-opacity: 0.6; }
-.zone:hover.supplier    { fill: #ffe5b4; fill-opacity: 0.2; }
+.zone:hover.performance { fill: #ffcccc; fill-opacity: 0.1; }
+.zone:hover.sourcing    { fill: #cce5ff; fill-opacity: 0.1; }
+.zone:hover.strategy    { fill: #d5f5d5; fill-opacity: 0.1; }
+.zone:hover.supplier    { fill: #ffe5b4; fill-opacity: 0.1; }
 
 #hoverInfo {
   margin-top: 12px;
