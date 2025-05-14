@@ -1,0 +1,88 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+#container {
+  position: relative;
+  display: inline-block;
+  width: 837px;
+  height: 837px;
+}
+
+#mainImage,
+#subImage,
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+#subImage {
+  display: none;
+  transform: translate(63px, -12px) scale(1.4);
+  transform-origin: top left;
+}
+
+.zone {
+  fill: transparent;
+  cursor: pointer;
+  transition: fill 0.3s ease, fill-opacity 0.3s ease;
+}
+
+.zone:hover.performance { fill: #ffcccc; fill-opacity: 0.6; }
+.zone:hover.sourcing    { fill: #cce5ff; fill-opacity: 0.6; }
+.zone:hover.strategy    { fill: #d5f5d5; fill-opacity: 0.6; }
+.zone:hover.supplier    { fill: #ffe5b4; fill-opacity: 0.6; }
+
+#hoverInfo {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+#clickResult {
+  margin-top: 20px;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+#menuItemsOverlay {
+  position: absolute;
+  display: none;
+  top: 150px;
+  left: calc(100% - 125px);
+  z-index: 10;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.menu-button {
+  padding: 8px 14px;
+  background-color: #3766b6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: underline;
+  min-width: 180px;
+  text-align: left;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menu-button:hover {
+  background-color: #005a99;
+}
