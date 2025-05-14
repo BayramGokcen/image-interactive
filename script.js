@@ -6,6 +6,8 @@ const strategyImage = document.getElementById('strategyImage');
 const menuItems = document.getElementById('menuItemsOverlay');
 const strategyMenu = document.getElementById('strategyMenuOverlay');
 const clickResult = document.getElementById('clickResult');
+const performanceImage = document.getElementById('performanceImage');
+const performanceMenu = document.getElementById('performanceMenuOverlay');
 
 function resetAll() {
   // Affiche l’image principale
@@ -16,12 +18,15 @@ function resetAll() {
   strategyImage.style.display = 'none';
   menuItems.style.display = 'none';
   strategyMenu.style.display = 'none';
-
+  performanceImage.style.display = 'none';
+  performanceImage.style.display = 'none';
+  performanceMenu.style.display = 'none';
   // Réactive les zones cliquables
   zones.forEach(z => {
     z.style.pointerEvents = 'auto';
     z.style.cursor = 'pointer';
   });
+
 }
 
 // Gestion du survol et du clic sur les zones
@@ -54,6 +59,17 @@ zones.forEach(zone => {
       mainImage.style.display = 'none';
       strategyImage.style.display = 'block';
       strategyMenu.style.display = 'flex';
+    }
+
+    if (action === 'openPerformanceImage') {
+      mainImage.style.display = 'none';
+      performanceImage.style.display = 'block';
+    }
+
+    if (action === 'openPerformanceImage') {
+      mainImage.style.display = 'none';
+      performanceImage.style.display = 'block';
+      performanceMenu.style.display = 'flex';
     }
   });
 });
