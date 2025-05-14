@@ -6,14 +6,15 @@ body {
 }
 
 h2 {
-  margin-top: 20px;
+  margin-top: 12px;
+  font-size: 1.2em;
 }
 
 #container {
   position: relative;
   display: inline-block;
-  width: 837px;
-  height: 837px;
+  width: 600px;   /* Réduit depuis 837px */
+  height: 600px;
 }
 
 #mainImage,
@@ -28,7 +29,7 @@ svg {
 
 #subImage {
   display: none;
-  transform: translate(63px, -12px) scale(1.4);
+  transform: translate(45px, -8px) scale(1.4);
   transform-origin: top left;
 }
 
@@ -44,40 +45,41 @@ svg {
 .zone:hover.supplier    { fill: #ffe5b4; fill-opacity: 0.6; }
 
 #hoverInfo {
-  margin-top: 20px;
-  font-size: 1.2em;
+  margin-top: 12px;
+  font-size: 1em;
   font-weight: bold;
   color: #333;
 }
 
 #clickResult {
-  margin-top: 20px;
+  margin-top: 12px;
   color: #0077cc;
   font-weight: bold;
+  font-size: 0.95em;
 }
 
 #menuItemsOverlay {
   position: absolute;
   display: none;
-  top: 150px;
-  left: calc(100% - 125px);
+  top: 100px;
+  left: calc(100% - 130px); /* aligné à droite du conteneur */
   z-index: 10;
   flex-direction: column;
-  gap: 10px;
-  width: 300px;
+  gap: 6px;
+  width: 220px;
 }
 
 .menu-button {
-  padding: 8px 14px;
+  padding: 6px 10px;
   background-color: #3766b6;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 0.95em;
   font-weight: 600;
   text-decoration: underline;
-  min-width: 180px;
+  min-width: 160px;
   text-align: left;
   transition: background-color 0.3s;
   font-family: 'Poppins', sans-serif;
