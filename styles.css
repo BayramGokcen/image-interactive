@@ -1,90 +1,118 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+  body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
 
-h2 {
-  margin-top: 12px;
-  font-size: 1.2em;
-}
+  h2 {
+    margin-top: 12px;
+    font-size: 1.2em;
+  }
 
-#container {
-  position: relative;
-  display: inline-block;
-  width: 600px;   /* Réduit depuis 837px */
-  height: 600px;
-}
+  #container {
+    position: relative;
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+  }
 
-#mainImage,
-#subImage,
-svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-}
+  #mainImage,
+  #subImage,
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
 
-#subImage {
-  display: none;
-  transform: translate(45px, -8px) scale(1.4);
-  transform-origin: top left;
-}
+  #subImage {
+    display: none;
+    transform: translate(45px, -8px) scale(1.4);
+    transform-origin: top left;
+  }
 
-.zone {
-  fill: transparent;
-  cursor: pointer;
-  transition: fill 0.3s ease, fill-opacity 0.3s ease;
-}
+  .zone {
+    fill: transparent;
+    cursor: pointer;
+    transition: fill 0.3s ease, fill-opacity 0.3s ease;
+  }
 
-.zone:hover.performance { fill: #ffcccc; fill-opacity: 0.6; }
-.zone:hover.sourcing    { fill: #cce5ff; fill-opacity: 0.6; }
-.zone:hover.strategy    { fill: #d5f5d5; fill-opacity: 0.6; }
-.zone:hover.supplier    { fill: #ffe5b4; fill-opacity: 0.6; }
+  .zone:hover.performance { fill: #ffcccc; fill-opacity: 0.6; }
+  .zone:hover.sourcing    { fill: #cce5ff; fill-opacity: 0.6; }
+  .zone:hover.strategy    { fill: #d5f5d5; fill-opacity: 0.6; }
+  .zone:hover.supplier    { fill: #ffe5b4; fill-opacity: 0.6; }
 
-#hoverInfo {
-  margin-top: 12px;
-  font-size: 1em;
-  font-weight: bold;
-  color: #333;
-}
+  #hoverInfo {
+    margin-top: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+  }
 
-#clickResult {
-  margin-top: 12px;
-  color: #0077cc;
-  font-weight: bold;
-  font-size: 0.95em;
-}
+  #clickResult {
+    margin-top: 12px;
+    color: #0077cc;
+    font-weight: bold;
+    font-size: 0.95em;
+  }
 
-#menuItemsOverlay {
-  position: absolute;
-  display: none;
-  top: 100px;
-  left: calc(100% - 130px); /* aligné à droite du conteneur */
-  z-index: 10;
-  flex-direction: column;
-  gap: 6px;
-  width: 220px;
-}
+  #menuItemsOverlay {
+    position: absolute;
+    display: none;
+    top: 100px;
+    left: calc(100% - 130px);
+    z-index: 10;
+    flex-direction: column;
+    gap: 6px;
+    width: 220px;
+  }
 
-.menu-button {
-  padding: 6px 10px;
-  background-color: #3766b6;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.95em;
-  font-weight: 600;
-  text-decoration: underline;
-  min-width: 160px;
-  text-align: left;
-  transition: background-color 0.3s;
-  font-family: 'Poppins', sans-serif;
-}
+  #strategyMenuOverlay {
+    position: absolute;
+    display: none;
+    top: 100px;
+    left: -100px;
+    z-index: 10;
+    flex-direction: column;
+    gap: 6px;
+    width: 220px;
+  }
 
-.menu-button:hover {
-  background-color: #005a99;
-}
+  .menu-button {
+    padding: 6px 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 600;
+    text-decoration: underline;
+    min-width: 160px;
+    text-align: left;
+    transition: background-color 0.3s;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Boutons Sourcing & Contract Management (bleu) */
+  .sourcing-btn {
+    background-color: #3766b6;
+  }
+  .sourcing-btn:hover {
+    background-color: #005a99;
+  }
+
+  /* Boutons Strategy (vert) */
+  .strategy-btn {
+    background-color: #768ebc;
+  }
+  .strategy-btn:hover {
+    background-color: #435c8a;
+  }
+
+  #strategyImage {
+    display: none;
+    transform: translate(-308px, -5px) scale(1.15);
+    transform-origin: top left;
+  }
