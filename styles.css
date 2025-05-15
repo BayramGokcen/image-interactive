@@ -33,16 +33,25 @@ svg {
   transform-origin: top left;
 }
 
+/* Zones SVG */
 .zone {
   fill: transparent;
   cursor: pointer;
   transition: fill 0.3s ease, fill-opacity 0.3s ease;
 }
 
+/* Hover : effet conservé */
 .zone:hover.performance { fill: #ffcccc; fill-opacity: 0.1; }
 .zone:hover.sourcing    { fill: #cce5ff; fill-opacity: 0.1; }
 .zone:hover.strategy    { fill: #d5f5d5; fill-opacity: 0.1; }
 .zone:hover.supplier    { fill: #ffe5b4; fill-opacity: 0.1; }
+
+.zone:active {
+  fill: transparent !important;
+  fill-opacity: 0 !important;
+  stroke: none !important;
+  outline: none !important;
+}
 
 #hoverInfo {
   margin-top: 12px;
@@ -127,7 +136,7 @@ svg {
   position: absolute;
   display: none;
   top: 475px;
-  left: 325px; /* centre approximativement, ajuste si besoin */
+  left: 325px;
   transform: translateX(-50%);
   z-index: 10;
   flex-direction: column;
