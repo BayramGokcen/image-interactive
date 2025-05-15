@@ -3,33 +3,39 @@ const hoverInfo = document.getElementById('hoverInfo');
 const mainImage = document.getElementById('mainImage');
 const subImage = document.getElementById('subImage');
 const strategyImage = document.getElementById('strategyImage');
+const performanceImage = document.getElementById('performanceImage');
+const supplierImage = document.getElementById('supplierImage');
+
 const menuItems = document.getElementById('menuItemsOverlay');
 const strategyMenu = document.getElementById('strategyMenuOverlay');
-const clickResult = document.getElementById('clickResult');
-const performanceImage = document.getElementById('performanceImage');
 const performanceMenu = document.getElementById('performanceMenuOverlay');
+const clickResult = document.getElementById('clickResult');
+
+const supplierZone = document.getElementById('supplierExpandedZone');
+const supplierMenu = document.getElementById('supplierMenuOverlay');
 
 function resetAll() {
-  // Affiche l’image principale
   mainImage.style.display = 'block';
-
-  // Cache les sous-images et les menus
   subImage.style.display = 'none';
-  strategyImage.style.display = 'none';
+
   menuItems.style.display = 'none';
+
+  strategyImage.style.display = 'none';
   strategyMenu.style.display = 'none';
-  performanceImage.style.display = 'none';
+
   performanceImage.style.display = 'none';
   performanceMenu.style.display = 'none';
-  // Réactive les zones cliquables
+
+  supplierImage.style.display = 'none';
+  supplierZone.style.display = 'none';
+  supplierMenu.style.display = 'none';
+
   zones.forEach(z => {
     z.style.pointerEvents = 'auto';
     z.style.cursor = 'pointer';
   });
-
 }
 
-// Gestion du survol et du clic sur les zones
 zones.forEach(zone => {
   zone.addEventListener('mouseenter', () => {
     hoverInfo.textContent = zone.dataset.label;
@@ -40,15 +46,13 @@ zones.forEach(zone => {
   });
 
   zone.addEventListener('click', () => {
-    resetAll(); // Réinitialise tout d’abord
+    resetAll();
 
     const action = zone.dataset.action;
 
-    // Désactive la zone cliquée
     zone.style.pointerEvents = 'none';
     zone.style.cursor = 'default';
 
-    // Affiche les éléments correspondants selon l’action
     if (action === 'openSubImage') {
       mainImage.style.display = 'none';
       subImage.style.display = 'block';
@@ -64,17 +68,27 @@ zones.forEach(zone => {
     if (action === 'openPerformanceImage') {
       mainImage.style.display = 'none';
       performanceImage.style.display = 'block';
+      performanceMenu.style.display = 'flex';
     }
 
-    if (action === 'openPerformanceImage') {
+    if (action === 'openSupplierImage') {
       mainImage.style.display = 'none';
-      performanceImage.style.display = 'block';
-      performanceMenu.style.display = 'flex';
+      supplierImage.style.display = 'block';
+      supplierZone.style.display = 'block';
+      supplierMenu.style.display = 'flex';
+
+      zones.forEach(z => {
+        z.style.pointerEvents = 'none';
+        z.style.cursor = 'default';
+      });
     }
   });
 });
 
-// Gère les clics sur les boutons de menu
+// 🔁 Nouveau comportement : clic sur la grande zone circulaire = reset
+supplierZone.addEventListener('click', resetAll);
+
+// clics sur tous les boutons
 document.querySelectorAll('.menu-button').forEach(button => {
   button.addEventListener('click', () => {
     clickResult.textContent = `Vous avez cliqué sur : ${button.textContent}`;

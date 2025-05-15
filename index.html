@@ -13,16 +13,17 @@
     <img id="subImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_S%26C_WO_2.png?csf=1&web=1&e=birWqN" alt="Sous-menu Sourcing">
     <img id="strategyImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_STRATEGY_2.png?csf=1&web=1&e=77MaTB" alt="Sous-menu Strategy">
     <img id="performanceImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_PERF.png?csf=1&web=1&e=sjMSx3" alt="Sous-menu Performance">
+    <img id="supplierImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_SUP.png?csf=1&web=1&e=g5NOdC" alt="Supplier Detail">
 
     <svg viewBox="0 0 837 837">
       <g transform="scale(1.60) translate(0,0)">
         <polygon class="zone performance" points="170,286,180,302,193,310,210,320,229,327,256,333,276,330,301,324,320,317,336,307,345,294,352,284,445,338,432,361,416,377,401,395,375,412,349,429,310,440,273,446,234,443,187,435,156,421,124,402,102,381,87,360,72,340" data-label="Performance Management" data-action="openPerformanceImage" />
         <polygon class="zone sourcing" points="353,283,447,338,464,295,471,268,474,228,469,185,458,150,440,117,418,86,396,62,360,40,321,24,279,15,257,12,259,125,283,128,308,142,338,163,356,192,364,222,364,250" data-label="Sourcing & Contract Management" data-action="openSubImage" />
         <polygon class="zone strategy" points="259,129,257,13,196,23,150,44,112,73,76,122,53,165,45,203,44,252,49,283,58,310,72,341,169,286,158,260,157,221,162,194,178,167,194,148,216,135,237,129" data-label="Strategy" data-action="openStrategyImage" />
-        <polygon class="zone supplier" points="351,281,358,262,364,227,357,197,345,168,309,140,277,127,254,127,225,133,204,143,187,160,173,174,161,199,158,226,158,253,166,273,181,296,205,313,225,325,254,332,283,328,313,319,333,306" data-label="Supplier Management" />
+        <polygon class="zone supplier" points="351,281,358,262,364,227,357,197,345,168,309,140,277,127,254,127,225,133,204,143,187,160,173,174,161,199,158,226,158,253,166,273,181,296,205,313,225,325,254,332,283,328,313,319,333,306" data-label="Supplier Management" data-action="openSupplierImage" />
+        <circle id="supplierExpandedZone" cx="258" cy="230" r="190" fill="rgba(255, 255, 0, 0.1)"  style="display: none; cursor: pointer;" />
       </g>
     </svg>
-
     <div id="menuItemsOverlay">
       <a class="menu-button sourcing-btn" ...>SOURCING (LG301)</a>
       <button class="menu-button sourcing-btn">HOMOLOGATION (LG302)</button>
@@ -41,6 +42,12 @@
       <button class="menu-button performance-btn">SUPPLIER CRISIS MANAGEMENT (LG308)</button>
     </div>
 
+    <div id="supplierMenuOverlay">
+    <button class="menu-button supplier-btn">RISK (LG309)</button>
+    <button class="menu-button supplier-btn">CONTROLLED SUBSTANCES (LG310)</button>
+    <button class="menu-button supplier-btn">SRM (LG311)</button>
+    <button class="menu-button supplier-btn">CSR (LG312)</button>
+  </div>
 
   </div>
 

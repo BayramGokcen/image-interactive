@@ -142,3 +142,28 @@ svg {
 .performance-btn:hover {
   background-color: #3e5f97;
 }
+
+#supplierImage {
+  display: none;
+  transform: translate(-214px, -20px) scale(1.15);
+  transform-origin: top left;
+}
+
+#supplierMenuOverlay {
+  position: absolute;
+  display: none;
+  top: 200px;
+  left: 170px;
+  z-index: 10;
+  flex-direction: column;
+  gap: 6px;
+  width: 300px;
+}
+
+.supplier-btn {
+  background-color: #1a3555;
+}
+
+.supplier-btn:hover {
+  background-color: #294c77;
+}
