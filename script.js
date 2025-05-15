@@ -1,3 +1,10 @@
+const ZOOM_SCALE = 1.15;
+const ZOOM_ORIGIN = 'top left';
+const OFFSET_MAIN_TO_SUB = 'translate(45px, -8px)';
+const OFFSET_STRATEGY = 'translate(-308px, -5px)';
+const OFFSET_PERFORMANCE = 'translate(30px, -5px)';
+const OFFSET_SUPPLIER = 'translate(-214px, -20px)';
+
 const zones = document.querySelectorAll('.zone');
 const hoverInfo = document.getElementById('hoverInfo');
 const mainImage = document.getElementById('mainImage');
@@ -9,26 +16,23 @@ const supplierImage = document.getElementById('supplierImage');
 const menuItems = document.getElementById('menuItemsOverlay');
 const strategyMenu = document.getElementById('strategyMenuOverlay');
 const performanceMenu = document.getElementById('performanceMenuOverlay');
-const clickResult = document.getElementById('clickResult');
-
-const supplierZone = document.getElementById('supplierExpandedZone');
 const supplierMenu = document.getElementById('supplierMenuOverlay');
+const supplierZone = document.getElementById('supplierExpandedZone');
+const clickResult = document.getElementById('clickResult');
 
 function resetAll() {
   mainImage.style.display = 'block';
   subImage.style.display = 'none';
+  strategyImage.style.display = 'none';
+  performanceImage.style.display = 'none';
+  supplierImage.style.display = 'none';
 
   menuItems.style.display = 'none';
-
-  strategyImage.style.display = 'none';
   strategyMenu.style.display = 'none';
-
-  performanceImage.style.display = 'none';
   performanceMenu.style.display = 'none';
-
-  supplierImage.style.display = 'none';
-  supplierZone.style.display = 'none';
   supplierMenu.style.display = 'none';
+
+  supplierZone.style.display = 'none';
 
   zones.forEach(z => {
     z.style.pointerEvents = 'auto';
@@ -47,48 +51,46 @@ zones.forEach(zone => {
 
   zone.addEventListener('click', () => {
     resetAll();
-
     const action = zone.dataset.action;
 
     zone.style.pointerEvents = 'none';
     zone.style.cursor = 'default';
 
-    if (action === 'openSubImage') {
-      mainImage.style.display = 'none';
-      subImage.style.display = 'block';
-      menuItems.style.display = 'flex';
-    }
+    switch (action) {
+      case 'openSubImage':
+        mainImage.style.display = 'none';
+        subImage.style.display = 'block';
+        menuItems.style.display = 'flex';
+        break;
 
-    if (action === 'openStrategyImage') {
-      mainImage.style.display = 'none';
-      strategyImage.style.display = 'block';
-      strategyMenu.style.display = 'flex';
-    }
+      case 'openStrategyImage':
+        mainImage.style.display = 'none';
+        strategyImage.style.display = 'block';
+        strategyMenu.style.display = 'flex';
+        break;
 
-    if (action === 'openPerformanceImage') {
-      mainImage.style.display = 'none';
-      performanceImage.style.display = 'block';
-      performanceMenu.style.display = 'flex';
-    }
+      case 'openPerformanceImage':
+        mainImage.style.display = 'none';
+        performanceImage.style.display = 'block';
+        performanceMenu.style.display = 'flex';
+        break;
 
-    if (action === 'openSupplierImage') {
-      mainImage.style.display = 'none';
-      supplierImage.style.display = 'block';
-      supplierZone.style.display = 'block';
-      supplierMenu.style.display = 'flex';
-
-      zones.forEach(z => {
-        z.style.pointerEvents = 'none';
-        z.style.cursor = 'default';
-      });
+      case 'openSupplierImage':
+        mainImage.style.display = 'none';
+        supplierImage.style.display = 'block';
+        supplierZone.style.display = 'block';
+        supplierMenu.style.display = 'flex';
+        zones.forEach(z => {
+          z.style.pointerEvents = 'none';
+          z.style.cursor = 'default';
+        });
+        break;
     }
   });
 });
 
-// 🔁 Nouveau comportement : clic sur la grande zone circulaire = reset
 supplierZone.addEventListener('click', resetAll);
 
-// clics sur tous les boutons
 document.querySelectorAll('.menu-button').forEach(button => {
   button.addEventListener('click', () => {
     clickResult.textContent = `Vous avez cliqué sur : ${button.textContent}`;

@@ -7,25 +7,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <div id="container">
-    <img id="mainImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/SiteAssets/SitePages/Home/3118031759-rosasse_EN.png?csf=1&amp;web=1&amp;e=cQaUwU" alt="Schema Supplier">
-    <img id="subImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_S%26C_WO_2.png?csf=1&web=1&e=birWqN" alt="Sous-menu Sourcing">
-    <img id="strategyImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_STRATEGY_2.png?csf=1&web=1&e=77MaTB" alt="Sous-menu Strategy">
-    <img id="performanceImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_PERF.png?csf=1&web=1&e=sjMSx3" alt="Sous-menu Performance">
-    <img id="supplierImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_SUP.png?csf=1&web=1&e=g5NOdC" alt="Supplier Detail">
+    <!-- Images -->
+    <img id="mainImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/SiteAssets/SitePages/Home/3118031759-rosasse_EN.png" alt="Schema Supplier">
+    <img id="subImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_S%26C_WO_2.png" alt="Sous-menu Sourcing">
+    <img id="strategyImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_STRATEGY_2.png" alt="Sous-menu Strategy">
+    <img id="performanceImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_PERF.png" alt="Sous-menu Performance">
+    <img id="supplierImage" src="https://grpleg.sharepoint.com/:i:/r/sites/SMQ2/Shared%20Documents/rosasse_EN_SUP.png" alt="Supplier Detail">
 
+    <!-- Zones interactives précises -->
     <svg viewBox="0 0 837 837">
-      <g transform="scale(1.60) translate(0,0)">
-        <polygon class="zone performance" points="170,286,180,302,193,310,210,320,229,327,256,333,276,330,301,324,320,317,336,307,345,294,352,284,445,338,432,361,416,377,401,395,375,412,349,429,310,440,273,446,234,443,187,435,156,421,124,402,102,381,87,360,72,340" data-label="Performance Management" data-action="openPerformanceImage" />
-        <polygon class="zone sourcing" points="353,283,447,338,464,295,471,268,474,228,469,185,458,150,440,117,418,86,396,62,360,40,321,24,279,15,257,12,259,125,283,128,308,142,338,163,356,192,364,222,364,250" data-label="Sourcing & Contract Management" data-action="openSubImage" />
-        <polygon class="zone strategy" points="259,129,257,13,196,23,150,44,112,73,76,122,53,165,45,203,44,252,49,283,58,310,72,341,169,286,158,260,157,221,162,194,178,167,194,148,216,135,237,129" data-label="Strategy" data-action="openStrategyImage" />
-        <polygon class="zone supplier" points="351,281,358,262,364,227,357,197,345,168,309,140,277,127,254,127,225,133,204,143,187,160,173,174,161,199,158,226,158,253,166,273,181,296,205,313,225,325,254,332,283,328,313,319,333,306" data-label="Supplier Management" data-action="openSupplierImage" />
-        <circle id="supplierExpandedZone" cx="258" cy="230" r="190" fill="rgba(255, 255, 0, 0.1)"  style="display: none; cursor: pointer;" />
+      <g transform="scale(1.60)">
+        <!-- Performance (bas) -->
+        <polygon class="zone performance" data-label="Performance Management" data-action="openPerformanceImage"
+          points="168,285,175,294,183,302,191,307,199,313,206,319,216,323,228,327,238,331,249,331,259,331,271,331,282,329,293,326,305,322,315,317,325,310,334,302,341,294,350,282,444,337,434,351,426,364,416,375,405,385,392,396,379,406,366,414,351,422,335,429,319,435,304,439,288,442,273,445,255,445,238,445,221,442,205,439,190,435,176,430,158,422,143,411,130,403,124,399,119,395,113,389,107,384,101,378,96,373,92,368,87,362,83,355,70,362,74,354,77,344,80,338,83,332" />
+
+        <!-- Sourcing (droite) -->
+        <polygon class="zone sourcing" data-label="Sourcing & Contract Management" data-action="openSubImage"
+          points="257,14,258,124,272,126,286,130,296,134,308,139,316,145,326,153,337,159,344,167,350,178,354,189,358,198,362,211,364,223,364,230,363,238,362,244,361,251,360,258,358,265,356,271,353,277,350,282,433,330,441,332,448,329,464,328,453,319,456,310,460,303,462,294,464,284,468,272,470,261,472,248,472,232,471,215,471,201,468,186,464,170,460,158,454,144,447,129,440,117,431,105,424,94,417,85,405,74,396,65,388,59,379,52,366,44,357,39,345,34,333,28,318,22,297,18,281,15,270,14" />
+
+        <!-- Strategy (gauche) -->
+        <polygon class="zone strategy" data-label="Strategy" data-action="openStrategyImage"
+          points="240,2,244,7,248,12,251,17,255,22,259,25,256,30,257,37,258,126,245,127,236,127,227,131,219,133,212,136,205,141,198,145,191,151,186,155,182,159,177,164,174,169,170,174,166,179,163,186,160,193,158,199,156,206,155,214,154,221,154,231,154,240,155,249,158,258,160,265,163,273,166,280,168,284,74,338,68,333,65,324,59,315,56,305,52,295,49,286,48,278,47,270,44,260,43,249,43,239,43,230,43,222,44,213,45,204,46,197,47,186,49,176,52,165,56,154,61,142,67,132,71,123,76,113,84,103,92,92,100,83,113,72,124,62,133,54,147,45,158,38,176,30,195,23,212,20,227,17,239,16" />
+
+        <!-- Supplier (centre) -->
+        <circle class="zone supplier" data-label="Supplier Management" data-action="openSupplierImage"
+                cx="258" cy="230" r="105" fill="transparent" />
+
+        <!-- Cercle agrandi pour le mode Supplier -->
+        <circle id="supplierExpandedZone" cx="258" cy="230" r="190" fill="rgba(0,0,0,0)" style="display:none; cursor:pointer;" />
       </g>
     </svg>
+
+    <!-- Menus contextuels -->
     <div id="menuItemsOverlay">
-      <a class="menu-button sourcing-btn" ...>SOURCING (LG301)</a>
+      <button class="menu-button sourcing-btn">SOURCING (LG301)</button>
       <button class="menu-button sourcing-btn">HOMOLOGATION (LG302)</button>
       <button class="menu-button sourcing-btn">OFFER CREATION (LG303)</button>
       <button class="menu-button sourcing-btn">CONTRACT (LG304)</button>
@@ -43,18 +59,16 @@
     </div>
 
     <div id="supplierMenuOverlay">
-    <button class="menu-button supplier-btn">RISK (LG309)</button>
-    <button class="menu-button supplier-btn">CONTROLLED SUBSTANCES (LG310)</button>
-    <button class="menu-button supplier-btn">SRM (LG311)</button>
-    <button class="menu-button supplier-btn">CSR (LG312)</button>
-  </div>
-
+      <a href="https://grpleg.sharepoint.com/sites/SMQ2/SitePages/Gestion-Risque.aspx" target="_blank" class="menu-button supplier-btn">RISK (LG309)</a>
+      <button class="menu-button supplier-btn">CONTROLLED SUBSTANCES (LG310)</button>
+      <button class="menu-button supplier-btn">SRM (LG311)</button>
+      <button class="menu-button supplier-btn">CSR (LG312)</button>
+    </div>
   </div>
 
   <div id="hoverInfo">Survolez une zone pour voir l'information</div>
   <div id="clickResult"></div>
 
   <script src="script.js" defer></script>
-
 </body>
 </html>
