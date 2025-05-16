@@ -45,10 +45,6 @@ zones.forEach(zone => {
     hoverInfo.textContent = zone.dataset.label;
   });
 
-  zone.addEventListener('mouseleave', () => {
-    hoverInfo.textContent = "Survolez une zone pour voir l'information";
-  });
-
   zone.addEventListener('click', () => {
     resetAll();
     const action = zone.dataset.action;

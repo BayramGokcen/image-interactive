@@ -53,20 +53,6 @@ svg {
   outline: none !important;
 }
 
-#hoverInfo {
-  margin-top: 12px;
-  font-size: 1em;
-  font-weight: bold;
-  color: #333;
-}
-
-#clickResult {
-  margin-top: 12px;
-  color: #0077cc;
-  font-weight: bold;
-  font-size: 0.95em;
-}
-
 #menuItemsOverlay {
   position: absolute;
   display: none;
